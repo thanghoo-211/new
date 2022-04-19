@@ -1,12 +1,22 @@
+import React  from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { NavigationContainer, ThemeProvider } from '@react-navigation/native';
+import { Theme } from '@rneui/themed';
+import HomeScreen from './scr/screen/HomeScreen'
+
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaProvider>
+      <ThemeProvider>
+        <NavigationContainer>
+          <HomeScreen/>
+          <StatusBar/>
+        </NavigationContainer>
+      </ThemeProvider>
+    </SafeAreaProvider>
   );
 }
 
